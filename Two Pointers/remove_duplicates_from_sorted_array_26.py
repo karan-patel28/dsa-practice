@@ -1,13 +1,16 @@
 from typing import List
 
-
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
         left = 0
 
         for right in range(len(nums)):
-            print(nums[right])
-        return nums
+            if nums[right] != nums[left]:
+                left += 1
+                nums[left] = nums[right]
+            right += 1
+
+        return len(nums[:left + 1])
 
 if __name__ == "__main__":
     obj = Solution()

@@ -15,7 +15,7 @@ def build_list(arr):
             curr = curr.next
         return dummy.next
 
-def build_list(arr, pos):
+def build_list_cycle(arr, pos):
         dummy = ListNode(0)
         curr = dummy
         cycle_node = None

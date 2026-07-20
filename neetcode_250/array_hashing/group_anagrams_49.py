@@ -4,8 +4,13 @@ from collections import defaultdict
 
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
-        strs.sort()
-        print(strs)
+        seen = defaultdict(list)
+
+        for i in strs:
+            word = ''.join(sorted(i))
+            seen[word].append(i)
+
+        return list(seen.values())
 
 
 if __name__ == "__main__":
